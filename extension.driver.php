@@ -18,7 +18,7 @@
 
 		private function numberFilter($countryList,&$number,&$position){
 			$result = array_filter($countryList, function($array) use(&$number,&$position){ // use($number,$position)
-						return substr($array, $position, $position+1) === substr($number, $position, $position+1);
+						return substr($array, 0, $position+1) === substr($number, 0, $position+1);
 					});
 
 			//if not found return false
